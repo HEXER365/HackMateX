@@ -1,0 +1,8 @@
+name: quick-recon
+description: Passive recon, live host probing, and a quick Nmap scan.
+steps:
+  - recon_subdomains: {}
+  - recon_probe: {}
+  - scan_nmap:
+      ports: "80,443,8080"
+      fast: true

@@ -1,0 +1,7 @@
+click
+rich
+pyyaml
+tinydb
+requests
+aiohttp
+jinja2
