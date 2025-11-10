@@ -1,10 +1,10 @@
-# HackMate: The Kali CLI Assistant
+# HackMateX: The Kali CLI Assistant
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yourusername/hackmate/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/hackmate.svg?style=social)](https://github.com/yourusername/hackmate/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/hackmate.svg?style=social)](https://github.com/yourusername/hackmate/network)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/HEXER365/HackMateX/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/HEXER365/HackMateX.svg?style=social)](https://github.com/HEXER365/HackMateX/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/HEXER365/HackMateX.svg?style=social)](https://github.com/HEXER365/HackMateX/network)
 
-**HackMate** is a modular, extensible command-line assistant for Kali Linux designed to streamline and automate common tasks for penetration testers, red-teamers, and bug-bounty hunters. It acts as a unified wrapper around industry-standard tools, enforcing a structured workflow, prioritizing safety, and organizing results into auditable, per-target workspaces.
+**HackMateX** is a modular, extensible command-line assistant for Kali Linux designed to streamline and automate common tasks for penetration testers, red-teamers, and bug-bounty hunters. It acts as a unified wrapper around industry-standard tools, enforcing a structured workflow, prioritizing safety, and organizing results into auditable, per-target workspaces.
 
 ## ✨ Features
 
@@ -17,7 +17,7 @@
 
 ## 🚀 Installation (Kali Linux / Debian)
 
-The simplest way to install HackMate and its dependencies is by using the provided `install.sh` script.
+The simplest way to install HackMateX and its dependencies is by using the provided `install.sh` script.
 
 ### Prerequisites
 
@@ -29,8 +29,8 @@ The simplest way to install HackMate and its dependencies is by using the provid
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/yourusername/hackmate.git
-    cd hackmate
+    git clone https://github.com/HEXER365/HackMateX.git
+    cd HackMateX
     ```
 
 2.  **Run the Auto-Installer:**
@@ -39,22 +39,22 @@ The simplest way to install HackMate and its dependencies is by using the provid
     sudo bash install.sh
     ```
 
-The script will install Python dependencies, check for/install external tools, and create the global `hackmate` command.
+The script will install Python dependencies, check for/install external tools, and create the global `HackMateX` command.
 
 ## ⚙️ Configuration
 
-HackMate uses a YAML configuration file located at `~/.hackmate/config.yaml`.
+HackMateX uses a YAML configuration file located at `~/.HackMateX/config.yaml`.
 
 To view the current configuration and workspace root:
 ```bash
-hackmate config
+HackMateX config
 ```
 
 You can edit this file to customize tool paths, concurrency limits, and enable the AI features.
 
 ## ⚠️ Safety and Ethical Use
 
-**HackMate is a professional tool intended for authorized security testing only.** Unauthorized use is illegal and unethical.
+**HackMateX is a professional tool intended for authorized security testing only.** Unauthorized use is illegal and unethical.
 
 The tool enforces the following mandatory safety controls:
 
@@ -71,10 +71,10 @@ Perform passive subdomain enumeration and check for live hosts.
 
 ```bash
 # 1. Find subdomains (requires scope confirmation)
-hackmate recon subdomains example.com --confirm-scope
+HackMateX recon subdomains example.com --confirm-scope
 
 # 2. Probe live hosts (uses results from step 1)
-hackmate recon probe example.com
+HackMateX recon probe example.com
 ```
 
 ### 2. Automated Flow Execution
@@ -83,10 +83,10 @@ Run a predefined sequence of commands (e.g., recon -> probe -> nmap).
 
 ```bash
 # View the example flow file
-cat hackmate/flows/quick-recon.yaml
+cat HackMateX/flows/quick-recon.yaml
 
 # Run the flow (requires both safety flags)
-hackmate flow run hackmate/flows/quick-recon.yaml example.com --confirm-scope --execute
+HackMateX flow run HackMateX/flows/quick-recon.yaml example.com --confirm-scope --execute
 ```
 
 ### 3. Notes and Reporting
@@ -95,13 +95,13 @@ Record a finding and generate a report from the collected data.
 
 ```bash
 # 1. Add a structured finding
-hackmate notes add example.com -t "Reflected XSS" -b "Found on /search?q=PAYLOAD"
+HackMateX notes add example.com -t "Reflected XSS" -b "Found on /search?q=PAYLOAD"
 
 # 2. List all findings for the target
-hackmate notes list example.com
+HackMateX notes list example.com
 
 # 3. Generate the final report (Markdown and PDF)
-hackmate report generate example.com --pdf
+HackMateX report generate example.com --pdf
 ```
 
 ### 4. Exploitation Utility
@@ -109,20 +109,20 @@ hackmate report generate example.com --pdf
 Quickly generate a reverse shell payload.
 
 ```bash
-hackmate exploit shell --reverse --lhost 10.0.0.1 --lport 4444
+HackMateX exploit shell --reverse --lhost 10.0.0.1 --lport 4444
 ```
 
 ## 🛠️ Development and Extensibility
 
-HackMate is designed to be easily extended.
+HackMateX is designed to be easily extended.
 
 ### Plugin System
 
-You can add new commands or tool wrappers by placing Python modules in the `hackmate/hackmate/plugins/` directory.
+You can add new commands or tool wrappers by placing Python modules in the `HackMateX/HackMateX/plugins/` directory.
 
 ### AI Assistance
 
-The `hackmate flow suggest <target>` command is a placeholder for an AI module that can analyze workspace artifacts and recommend the next logical steps. Enable this feature by configuring your API key in `~/.hackmate/config.yaml`.
+The `HackMateX flow suggest <target>` command is a placeholder for an AI module that can analyze workspace artifacts and recommend the next logical steps. Enable this feature by configuring your API key in `~/.HackMateX/config.yaml`.
 
 ## 🤝 Contributing
 
